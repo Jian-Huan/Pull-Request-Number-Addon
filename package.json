@@ -1,0 +1,16 @@
+{
+  "title": "Pull Request Number Addon",
+  "name": "pullrequestnumber",
+  "version": "0.0.1",
+  "description": "A firefox addon to show pull request number on Bitbucket",
+  "main": "index.js",
+  "author": "Jian-Huan Hong",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ]
+}
