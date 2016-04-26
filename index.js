@@ -1,4 +1,5 @@
 var buttons = require('sdk/ui/button/action');
+var data = require("sdk/self").data;
 var tabs = require("sdk/tabs");
 
 var button = buttons.ActionButton({
@@ -13,6 +14,12 @@ var button = buttons.ActionButton({
 });
 
 function handleClick(state) {
-    // How to get current tab?
-    tabs.open("https://developer.mozilla.org/");
+    var worker;
+    for (let tab of tabs) {
+        if (tab.title.indexOf('Pull requests') > -1) {
+            worker = tab.attach({
+                contentScriptFile: [data.url('jquery-2.2.3.min.js'), data.url("addPullRequestNumber.js")]
+            });
+        }
+    }
 }
