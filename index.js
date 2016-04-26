@@ -1,8 +1,8 @@
-var buttons = require('sdk/ui/button/action');
+//var buttons = require('sdk/ui/button/action');
 var data = require("sdk/self").data;
 var tabs = require("sdk/tabs");
 
-var button = buttons.ActionButton({
+/*var button = buttons.ActionButton({
     id: "mozilla-link",
     label: "Visit Mozilla",
     icon: {
@@ -22,4 +22,13 @@ function handleClick(state) {
             });
         }
     }
-}
+}*/
+
+// Listen for tab content loads.
+tabs.on('ready', function(tab) {
+    if (tab.title.indexOf('Pull requests') > -1) {
+        tab.attach({
+            contentScriptFile: [data.url('jquery-2.2.3.min.js'), data.url("addPullRequestNumber.js")]
+        });
+    }
+});

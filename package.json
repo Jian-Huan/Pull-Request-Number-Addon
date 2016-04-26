@@ -1,7 +1,7 @@
 {
   "title": "Pull Request Number Addon",
   "name": "pullrequestnumber",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A firefox addon to show pull request number on Bitbucket",
   "main": "index.js",
   "author": "Jian-Huan Hong",
